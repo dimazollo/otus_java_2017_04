@@ -14,20 +14,19 @@ import java.util.stream.Collectors;
 
 
 public class Main {
-    private static final File DICTIONARY = new File("L1.1/src/main/resources/DICTIONARY.csv");
+    private static final String DICTIONARY = "dictionary.csv";
     private static BullCowGame bullCowGame;
     private static List<String> words;
 
     public static void main(String[] args) {
-        try {
 
+        try {
             readWords();
             do {
                 setUpGameParameters();
                 printIntro();
                 playGame();
             } while (askToPlayAgain());
-
         } catch (IOException e) {
             System.out.println();
             e.printStackTrace();
@@ -38,7 +37,9 @@ public class Main {
     }
 
     private static void readWords() throws IOException {
-        CSVReader reader = new CSVReader(new FileReader(DICTIONARY));
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        InputStream inputStream = classLoader.getResourceAsStream(DICTIONARY);
+        CSVReader reader = new CSVReader(new InputStreamReader(inputStream));
         words = reader.readAll().stream().map(line -> line[0].trim()).collect(Collectors.toList());
     }
 
