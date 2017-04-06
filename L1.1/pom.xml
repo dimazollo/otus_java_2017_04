@@ -17,17 +17,7 @@
             <artifactId>opencsv</artifactId>
             <version>${net.sf.opencsv.version}</version>
         </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>RELEASE</version>
-        </dependency>
     </dependencies>
-
-
-    <!--<parent>...</parent>-->
-    <!--<dependencyManagement></dependencyManagement>-->
-    <!--<modules></modules>-->
 
     <properties>
         <net.sf.opencsv.version>2.3</net.sf.opencsv.version>
@@ -37,9 +27,6 @@
 
     <!-- Build settings -->
     <build>
-        <defaultGoal>install</defaultGoal>
-        <directory>${basedir}/target</directory>
-
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -53,38 +40,44 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <version>2.2-beta-5</version>
+                <version>3.0.0</version>
                 <configuration>
                     <archive>
                         <manifest>
                             <mainClass>ru.otus.homework.Main</mainClass>
                         </manifest>
                     </archive>
-                    <finalName>${project.name}_${java.version}_${os.name}</finalName>
+                    <finalName>${project.name}</finalName>
                     <appendAssemblyId>false</appendAssemblyId>
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
                 </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals><goal>single</goal></goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
 
-    <!--<reporting></reporting>-->
-
     <!--More Project information-->
-    <name>Bulls and Cows game</name>
+    <name>Bulls_and_Cows_game</name>
     <description>"Guess a word" simple game</description>
-    <!--<url></url>-->
-    <!--<inceptionYear></inceptionYear>-->
-    <!--<licenses></licenses>-->
-    <!--<organization></organization>-->
+
     <developers>
         <developer>
-            <id>dimazoll</id>
+            <id>DVolovod</id>
             <name>Dmitry Volovod</name>
-            <email>dmitry.volovod@gmail.com</email>
+            <email>dimavolovod@mail.ru</email>
             <timezone>UTC+3</timezone>
+            <roles>
+                <role>architect</role>
+                <role>developer</role>
+            </roles>
         </developer>
     </developers>
 
