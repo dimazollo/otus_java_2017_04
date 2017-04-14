@@ -6,18 +6,8 @@
 
     <!-- The Basics -->
     <groupId>ru.otus</groupId>
-    <artifactId>java-2017-04-hw1</artifactId>
+    <artifactId>java-2017-04-hw2</artifactId>
     <version>1.0-SNAPSHOT</version>
-
-    <packaging>jar</packaging>
-
-    <dependencies>
-        <dependency>
-            <groupId>net.sf.opencsv</groupId>
-            <artifactId>opencsv</artifactId>
-            <version>${net.sf.opencsv.version}</version>
-        </dependency>
-    </dependencies>
 
     <properties>
         <net.sf.opencsv.version>2.3</net.sf.opencsv.version>
@@ -27,6 +17,7 @@
 
     <!-- Build settings -->
     <build>
+        <finalName>${project.name}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -35,6 +26,7 @@
                 <configuration>
                     <source>${maven.compiler.source}</source>
                     <target>${maven.compiler.target}</target>
+                    <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
             <plugin>
@@ -47,7 +39,6 @@
                             <mainClass>ru.otus.homework.Main</mainClass>
                         </manifest>
                     </archive>
-                    <finalName>${project.name}</finalName>
                     <appendAssemblyId>false</appendAssemblyId>
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
@@ -65,8 +56,8 @@
     </build>
 
     <!--More Project information-->
-    <name>Bulls_and_Cows_game</name>
-    <description>"Guess a word" simple game</description>
+    <name>size-o-meter</name>
+    <description>Experimental stand for measuring object size in memory</description>
 
     <developers>
         <developer>

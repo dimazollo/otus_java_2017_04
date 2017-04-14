@@ -1,13 +1,9 @@
 # Otus 2017-04 Homework
 
-**Student name:** Dmitry Volovod (Дмитрий Воловод)
+Группа 2017-04.1
 
-**e-mail:** dimavolovod@mail.ru
+### Автор
 
-### L1.1 
-- Create maven controlled project 
-- Configure project build from command line with `mvn install` command
-- Create _obfuscation_ branch where project build contains code obfuscation stage 
+Dmitry Volovod (Дмитрий Воловод)
 
-project build:
-`mvn clean install`
+dimavolovod@mail.ru

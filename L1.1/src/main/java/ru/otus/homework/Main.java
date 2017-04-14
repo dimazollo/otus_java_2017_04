@@ -31,7 +31,7 @@ public class Main {
             System.out.println();
             e.printStackTrace();
         } catch (IllegalArgumentException e) {
-            System.out.println("Ups! Sneaky goblins have stolen hidden word you had to guess!\n " +
+            System.out.println("Oops! Sneaky goblins have stolen hidden word you had to guess!\n " +
                     "Game cannot be played without any one...");
         }
     }
