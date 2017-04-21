@@ -106,6 +106,7 @@ public class MyArrayList<T> implements List<T> {
         throw new UnsupportedOperationException("Not implemented yet");
     }
 
+    // Shell sort
     public void sort(Comparator<? super T> c) {
         int step = size / 2;
         int j;
